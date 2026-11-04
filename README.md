@@ -8,9 +8,10 @@ Build 42 server.
 Based on *Common Sense Patch [B42.13+]* by FeedeameEsta (Workshop 3667553980,
 since removed). Common Sense itself is by BitBraven; all credit to the authors.
 
-- `CS_recipes.txt` override drops `CleanBandageWithAlcohol`: its `[Alcohol]`
-  fluid no longer exists in B42.14+, and the server refuses to load the world
-  (`Fluid not found: Alcohol`).
+- `CS_recipes.txt` override keeps `CleanBandageWithAlcohol` but with
+  `[RubbingAlcohol]`: the `Alcohol` fluid was renamed in B42.14+, and the old
+  name stops the server from loading the world (`Fluid not found: Alcohol`).
+  The patch this is based on removed the recipe instead.
 - `CS_fixing.txt` in B42 syntax (the B41 one crashed the vehicle mechanics menu).
 - Crowbar prying of doors, windows and vehicle doors done on the server in MP.
 - Obvious Collecting gives items on the server in MP.

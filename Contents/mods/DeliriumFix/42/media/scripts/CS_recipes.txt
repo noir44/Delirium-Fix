@@ -1,6 +1,32 @@
 module Base
 {
-    // FIX: Removed CleanBandageWithAlcohol recipe because "Alcohol" fluid was removed in B42.14, causing a crash.
-    // Use Disinfectant or other fluids if available in future updates.
-
+    // Delirium-Fix: Common Sense's CleanBandageWithAlcohol with the fluid renamed.
+    // B42.14+ has no "Alcohol" fluid (now RubbingAlcohol, see vanilla DisinfectRag);
+    // the unknown fluid stopped the server from loading the world.
+    // CutSheetWithClothes from the original file lives on as CSP_CutClothingToSheet.
+	craftRecipe CleanBandageWithAlcohol
+	{
+        timedAction = ScrubClothWithSoap,
+		Time = 40,
+		Tags = InHandCraft;Health,
+        category = Medical,
+        MetaRecipe = CleanBandage,
+		inputs
+		{
+			item 1 [Base.BandageDirty;Base.DenimStripsDirty;Base.LeatherStripsDirty;Base.RippedSheetsDirty] mode:destroy mappers[ragType],
+			item 1 [*],
+			-fluid 0.1 [RubbingAlcohol],
+		}
+		outputs
+		{
+			item 1 mapper:ragType,
+		}
+        	itemMapper ragType
+        	{
+			Base.Bandage = Base.BandageDirty,
+			Base.DenimStrips = Base.DenimStripsDirty,
+			Base.LeatherStrips = Base.LeatherStripsDirty,
+			Base.RippedSheets = Base.RippedSheetsDirty,
+		}
+	}
 }

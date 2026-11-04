@@ -1,0 +1,5 @@
+version=1
+title=Delirium Fix
+description=Compatibility fixes for third-party mods on the Delirium server. Build 42.
+tags=Build 42
+visibility=public

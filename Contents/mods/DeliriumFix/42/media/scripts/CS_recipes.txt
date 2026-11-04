@@ -1,0 +1,6 @@
+module Base
+{
+    // FIX: Removed CleanBandageWithAlcohol recipe because "Alcohol" fluid was removed in B42.14, causing a crash.
+    // Use Disinfectant or other fluids if available in future updates.
+
+}

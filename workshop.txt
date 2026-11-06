@@ -1,4 +1,5 @@
 version=1
+id=3833528631
 title=Delirium Fix
 description=Compatibility fixes for third-party mods on the Delirium server. Build 42.
 tags=Build 42

@@ -1,42 +1,27 @@
 module Base
 {
     /*
-    Delirium-Fix: brass goes both ways between vanilla and Ammo Maker.
+    Delirium-Fix: Ammo Maker's brass melts back into vanilla brass scrap.
 
     Ammo Maker (ammomaker, Workshop 2788256295) has its own brass stock,
     ammomaker.ammomaker_RecBrass "Recycled Brass" at 0.1 kg a piece, and every
-    ammo part is built out of that. Vanilla's Base.BrassScrap is 0.5 kg, so
-    1 : 5 is weight for weight, and the way back loses half of it on purpose -
-    10 pieces melt down into one scrap.
+    ammo part is built out of that. Vanilla's Base.BrassScrap is 0.5 kg, so ten
+    pieces melting into one scrap loses half the metal on purpose.
+
+    Only this direction is ours. The way out already exists in Ammo Maker at the
+    same rate a vanilla scrap is worth: its RecycleBrass hands back one piece
+    from its outputs plus four more from RecipeCodeOnCreate.RecycleBrass (the
+    brassData table in server/ammomaker_recipeCode.lua, ["BrassScrap"] = 4), and
+    it is gated behind a hammer, a metalworking chisel and a surface, and pays
+    5 Blacksmith. Adding a toolless copy of that would only undercut it.
 
     Both items are base:normal, so a plain count means whole items; flags
     [ItemCount] is written out anyway, the way Ammo Maker writes its own.
 
-    category = AmmoMaker puts the pair in that mod's crafting tab, next to its
-    RecycleBrass. The tab label comes from the mod's own
+    category = AmmoMaker puts this in that mod's crafting tab, next to
+    RecycleBrass, and the tab label comes from the mod's own
     IGUI_CraftingCategories_AmmoMaker.
-
-    No xpAward here on purpose: this is a conversion, not blacksmithing, and
-    Ammo Maker's own RecycleBrass pays 5 Blacksmith for the same 1 -> 5.
     */
-    craftRecipe DelFix_BrassScrapToRecBrass
-    {
-        timedAction = Making,
-        Time = 50,
-        Tags = InHandCraft,
-        NeedToBeLearn = False,
-        category = AmmoMaker,
-        ToolTip = Tooltip_Recipe_DelFix_BrassScrapToRecBrass,
-        inputs
-        {
-            item 1 [Base.BrassScrap] flags[ItemCount] mode:destroy,
-        }
-        outputs
-        {
-            item 5 ammomaker.ammomaker_RecBrass,
-        }
-    }
-
     craftRecipe DelFix_RecBrassToBrassScrap
     {
         timedAction = Making,

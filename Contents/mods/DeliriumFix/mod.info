@@ -2,6 +2,6 @@ name=Delirium Fix
 id=DelFix
 require=\BB_CommonSense
 poster=poster.png
-description=Compatibility fixes for third-party mods on the Delirium server. Common Sense (BB_CommonSense): CleanBandageWithAlcohol recipe fixed for B42.14+ (Alcohol fluid renamed to RubbingAlcohol; the old name stopped the server from loading), B42 fixing scripts, MP-synced crowbar prying of doors and vehicles, fuel menus, item collecting, Lua error guards. Based on Common Sense Patch by FeedeameEsta; Common Sense by BitBraven. Ammo Maker (ammomaker): brass converts both ways between vanilla Brass Scrap and Ammo Maker's Recycled Brass - one scrap gives five recycled, ten recycled melt back into one scrap. Load after Common Sense. Build 42.
+description=Compatibility fixes for third-party mods on the Delirium server. Common Sense (BB_CommonSense): CleanBandageWithAlcohol recipe fixed for B42.14+ (Alcohol fluid renamed to RubbingAlcohol; the old name stopped the server from loading), B42 fixing scripts, MP-synced crowbar prying of doors and vehicles, fuel menus, item collecting, Lua error guards. Based on Common Sense Patch by FeedeameEsta; Common Sense by BitBraven. Ammo Maker (ammomaker): ten pieces of its Recycled Brass melt back into one vanilla Brass Scrap, a way back that mod has no recipe for. Load after Common Sense. Build 42.
 tags=Build 42
 versionMin=42.13

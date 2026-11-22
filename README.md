@@ -25,3 +25,17 @@ since removed). Common Sense itself is by BitBraven; all credit to the authors.
 **Load order:** `\DelFix` must come after `\BB_CommonSense` in `Mods=`. Files
 keep the patch's paths on purpose: some replace Common Sense files with the same
 path, the rest must load after Common Sense files.
+
+## Ammo Maker (`ammomaker`, Workshop 2788256295), optional
+
+Nothing of Ammo Maker is copied or changed; Delirium Fix only wraps one of its
+global functions on the server and does nothing when Ammo Maker is not loaded.
+
+- Sandbox `DelFix.AmmoMakerDropCasings` (default off): casings are not put on
+  the ground at all (shots, reloads, full inventory). Brass catchers and
+  casings returned into the inventory keep working.
+- Ammo Maker keeps a global ModData record of every casing dropped on the
+  ground and forgets it only when that square is loaded with the casing still
+  there, so the list only grows. Records older than Ammo Maker's
+  `DroppedCasingsLifetime` are removed every ten in-game minutes; younger ones
+  stay, so casings lying on the ground now are still cleaned up by Ammo Maker.

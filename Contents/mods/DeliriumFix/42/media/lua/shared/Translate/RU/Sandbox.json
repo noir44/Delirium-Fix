@@ -1,0 +1,5 @@
+{
+	"Sandbox_DelFix": "Delirium Fix",
+	"Sandbox_DelFix_AmmoMakerDropCasings": "Ammo Maker: гильзы падают на землю",
+	"Sandbox_DelFix_AmmoMakerDropCasings_tooltip": "Выключено: Ammo Maker не кладёт гильзы на землю (выстрелы, перезарядка, полный инвентарь), такие гильзы просто не появляются. Гильзоулавливатели и возврат гильз в инвентарь работают как раньше. Включено: как в Ammo Maker. Без Ammo Maker ни на что не влияет."
+}

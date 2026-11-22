@@ -1,0 +1,10 @@
+VERSION = 1,
+
+option DelFix.AmmoMakerDropCasings
+{
+	type = boolean,
+	default = false,
+
+	page = DelFix,
+	translation = DelFix_AmmoMakerDropCasings,
+}

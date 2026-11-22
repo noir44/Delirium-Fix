@@ -1,0 +1,5 @@
+{
+	"Sandbox_DelFix": "Delirium Fix",
+	"Sandbox_DelFix_AmmoMakerDropCasings": "Ammo Maker: casings drop on the ground",
+	"Sandbox_DelFix_AmmoMakerDropCasings_tooltip": "Off: Ammo Maker never puts casings on the ground (shots, reloads, full inventory); they are simply not created. Brass catchers and casings returned into the inventory keep working. On: as in Ammo Maker. Does nothing without Ammo Maker."
+}

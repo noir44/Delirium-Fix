@@ -1,0 +1,15 @@
+module Base
+{
+	/* '83 GMC G-Series Vans (83gmcGseriesVans, Workshop 3799732653): extra paint.
+	   A second vehicle block with the same name is loaded on top of the first
+	   one without a reset (ScriptType.Vehicle has no ResetExisting flag), so
+	   this only appends skins. DelFix must load after 83gmcGseriesVans,
+	   otherwise this skin becomes index 0 and every existing van changes colour. */
+	vehicle 83gmcG1500lwb
+	{
+		skin
+		{
+			texture = Vehicles/Vehicles_DF_83gmcGseriesVans_Shell_purple,
+		}
+	}
+}

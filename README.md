@@ -39,3 +39,18 @@ global functions on the server and does nothing when Ammo Maker is not loaded.
   there, so the list only grows. Records older than Ammo Maker's
   `DroppedCasingsLifetime` are removed every ten in-game minutes; younger ones
   stay, so casings lying on the ground now are still cleaned up by Ammo Maker.
+
+## '83 GMC G-Series Vans (`83gmcGseriesVans`, Workshop 3799732653), optional
+
+KI5's van files are not copied or changed.
+
+- Purple paint for the G1500 LWB van (`Base.83gmcG1500lwb`), an 11th skin next
+  to KI5's ten. It is picked at random like the others when a van spawns; vans
+  already in the world keep their colour.
+- `scripts/vehicles/DF_83gmcGseriesVans_skins.txt` holds only the extra `skin`
+  block: a second `vehicle` block with the same name is loaded on top of the
+  first one and appends skins.
+
+**Load order:** `\DelFix` must come after `\83gmcGseriesVans` in `Mods=`
+(`mod.info` also says `loadModAfter`). Loaded before it, the purple skin
+becomes skin 0 and every existing van shifts to the next colour.

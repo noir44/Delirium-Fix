@@ -1,7 +1,7 @@
 # Delirium Fix (`DelFix`)
 
-Compatibility fixes for third-party mods used on the Delirium Project Zomboid
-Build 42 server.
+Small fixes and compatibility patches (third-party mods and vanilla) for the
+Delirium Project Zomboid Build 42 server.
 
 ## Common Sense (`BB_CommonSense`, Workshop 2875848298)
 
@@ -54,3 +54,18 @@ KI5's van files are not copied or changed.
 **Load order:** `\DelFix` must come after `\83gmcGseriesVans` in `Mods=`
 (`mod.info` also says `loadModAfter`). Loaded before it, the purple skin
 becomes skin 0 and every existing van shifts to the next colour.
+
+## Vanilla farming: longer last stage before rot
+
+The last stage of a crop (seed-bearing, still harvestable) lasts `rotTime`
+game hours, or half of `timeToGrow` when the crop has none, and then the plant
+rots. On a server with 16 game days per real day that is 13-45 real hours, so
+gardens rot while their owners are offline.
+
+- Sandbox `DelFix.FarmingRotTimeMultiplier` (default 10, 1 = vanilla)
+  multiplies that time. Growth, yield and the other stages are unchanged.
+- Applied when a plant enters the last stage: plants already in it keep the
+  deadline they had.
+- Server-side wrapper of `farming_vegetableconf.grow`
+  (`server/FarmingPatch/DF_FarmingRotTime.lua`), so it also covers modded
+  crops added to `farming_vegetableconf.props`.

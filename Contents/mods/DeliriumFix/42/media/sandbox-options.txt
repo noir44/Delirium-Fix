@@ -8,3 +8,14 @@ option DelFix.AmmoMakerDropCasings
 	page = DelFix,
 	translation = DelFix_AmmoMakerDropCasings,
 }
+
+option DelFix.FarmingRotTimeMultiplier
+{
+	type = double,
+	min = 1.0,
+	max = 100.0,
+	default = 10.0,
+
+	page = DelFix,
+	translation = DelFix_FarmingRotTimeMultiplier,
+}

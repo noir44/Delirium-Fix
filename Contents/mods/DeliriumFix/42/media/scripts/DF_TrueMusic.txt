@@ -1,0 +1,36 @@
+module DelFix
+{
+	imports
+	{
+		Base
+	}
+
+	/* True Music Jukebox 42 (TrueMusicJukebox, Workshop 3398874593): own songs.
+	   The jukebox plays an item when its type (no module) contains "Cassette"
+	   or "Vinyl" and does not start with "TC"; the sound is looked up by the
+	   same name (GameSounds.getSound(item:getType())). Item and sound names
+	   must match and be unique across all mods. Icon and world model come
+	   from the jukebox mod (Item_TCTape1..12, Tsarcraft.TCTape1..12). */
+
+	sound CassetteKukhariZSokyroyu
+	{
+		category = True Music,
+		master = Ambient,
+		clip
+		{
+			file = media/sound/DelFixMusic/KukhariZSokyroyu.ogg,
+			distanceMax = 85,
+		}
+	}
+
+	item CassetteKukhariZSokyroyu
+	{
+		ItemType		=	base:normal,
+		DisplayName		=	Cassette: Kukhari z sokyroiu,
+		DisplayCategory	=	Entertainment,
+		Weight			=	0.02,
+		Icon			=	TCTape1,
+		CanSpawn		=	false,
+		WorldStaticModel	=	Tsarcraft.TCTape1,
+	}
+}

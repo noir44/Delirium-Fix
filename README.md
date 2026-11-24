@@ -69,3 +69,17 @@ gardens rot while their owners are offline.
 - Server-side wrapper of `farming_vegetableconf.grow`
   (`server/FarmingPatch/DF_FarmingRotTime.lua`), so it also covers modded
   crops added to `farming_vegetableconf.props`.
+
+## True Music Jukebox (`TrueMusicJukebox`, Workshop 3398874593), optional
+
+Own songs on cassettes for the jukebox. Nothing of True Music is copied or
+changed; icons and the world model are the jukebox mod's own.
+
+- `Kukhari z sokyroiu` — `DelFix.CassetteKukhariZSokyroyu`. Not spawned in the
+  world, given by admins.
+- Adding a song: `.ogg` in `media/sound/DelFixMusic/`, a `sound` and an `item`
+  with the same name in `scripts/DF_TrueMusic.txt`, a `GlobalMusic` line in
+  `lua/shared/TrueMusicPatch/DF_TrueMusicTracks.lua`, the name in
+  `ItemName.json` (EN, RU, UA). The name must contain `Cassette`, must not
+  start with `TC` and must be unique across all mods: the jukebox finds the
+  sound by the item type without the module.

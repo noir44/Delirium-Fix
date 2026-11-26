@@ -83,3 +83,20 @@ changed; icons and the world model are the jukebox mod's own.
   `ItemName.json` (EN, RU, UA). The name must contain `Cassette`, must not
   start with `TC` and must be unique across all mods: the jukebox finds the
   sound by the item type without the module.
+
+## Player corpses in car trunks
+
+A player corpse could not be picked up or put into a trunk: it vanished until
+relog. The engine writes a corpse item into a fixed 20000-byte buffer, and the
+corpse carries a copy of the character's mod data. Lifestyle keeps every
+learned song in it, hundreds of tables, so the buffer overflowed
+(`BufferOverflowException` in the server log).
+
+- Before a corpse is grabbed or dropped into a container, its mod data is
+  estimated; above about 4000 bytes the largest tables are removed from the
+  corpse copy until it fits. The living character is never touched.
+- Each cut is printed to the log: `[DelFix] corpse modData cut before ...`.
+- Clothes and inventory use the same buffer: a corpse with packed pockets can
+  still overflow, empty them first.
+- `lua/shared/CorpsePatch/DF_CorpseModData.lua`, wrappers of
+  `ISGrabCorpseAction.new` and `ISDropCorpseIntoContainer.new`/`complete`.
